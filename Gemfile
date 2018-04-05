@@ -51,6 +51,7 @@ group :development, :test do
   gem 'rails-controller-testing',          '~> 1.0'
   gem 'figaro',                            '1.1'
   gem 'bundle-audit'
+  gem 'skylight'
 end
 
 group :development do
