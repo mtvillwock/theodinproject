@@ -12,8 +12,10 @@ class LessonDecorator < ApplicationDecorator
     FindLesson.new(lesson, course).next_lesson
   end
 
+  attr_writer(:course)
+
   def course
-    CourseDecorator.new(lesson.course)
+    @course ||= CourseDecorator.new(lesson.course)
   end
 
   private

@@ -6,7 +6,7 @@ gem 'puma',                         '~> 3.11.2'
 gem 'turbolinks'
 gem 'jquery-rails',                 '~> 4.2.1'
 gem 'devise',                       '~> 4.4.0' # Managing environment variables
-gem 'rack-timeout',                 '~> 0.4'
+# gem 'rack-timeout',                 '~> 0.4'
 gem 'kaminari',                     '~> 1.0', '>= 1.0.1'
 gem 'pg',                           '~> 0.19'
 gem 'premailer-rails',              '~> 1.9'
@@ -55,10 +55,12 @@ end
 
 group :development do
   gem 'web-console',                       '~> 3.4'
-  gem 'better_errors',                     '~> 2.1'  # gives much better error messages for debug
+  # gem 'better_errors',                     '~> 2.1'  # gives much better error messages for debug
   gem 'binding_of_caller',                 '~> 0.7'  # helps out better_errors by giving you an interactive way to query variables and methods on the better_errors error screen
   gem 'letter_opener',                     '~> 1.4'  # shows outgoing emails in your browser instead
   gem 'derailed'                                     # Memory benchmarking
   gem 'reek'                                         # Code smell detector
   gem 'rubocop', require: false                      # Static code analyser
 end
+
+gem 'pry-byebug'

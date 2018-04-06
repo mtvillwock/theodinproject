@@ -4,8 +4,8 @@
   <div class="row">
     <div class="col-12">
       <div class="lesson-header">
-        <%= link_to @lesson.course, class: 'course-card-header__link' do %>
-          <%= render 'courses/course/banner', course: @lesson.course %>
+        <%= link_to @lcourse, class: 'course-card-header__link' do %>
+          <%= render 'courses/course/banner', course: @lcourse %>
         <% end %>
         <h2 class="lesson-header__title accent"><%= @lesson.title %></h2>
       </div>
@@ -27,7 +27,7 @@
   <div class="container">
     <div class="card-main">
       <h1 class="lesson-functions__title">
-        <%= @lesson.course.title %>
+        <%= @lcourse.title %>
       </h1>
 
       <h3 class="lesson-functions__sub-title accent bold">
@@ -35,7 +35,7 @@
       </h3>
 
       <div class="lesson-button-group">
-        <%= render 'lesson_buttons', lesson: @lesson, course: @lesson.course, user: @user %>
+        <%= render 'lesson_buttons', lesson: @lesson, course: @lcourse, user: @user %>
       </div>
 
       <% if @projects && ProjectSubmissionFeature.enabled? %>

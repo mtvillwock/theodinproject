@@ -37,13 +37,13 @@ class LessonsController < ApplicationController
   end
 
   def decorated_lesson
-    LessonDecorator.new(lesson)
+    LessonDecorator.new(lesson).tap do |ld|
+      ld.course = @lcourse
+    end
   end
 
   def lesson
-    Lesson
-      .includes(:section, course: [:lessons, sections: [:lessons]])
-      .friendly
-      .find(params[:id])
+    @lcourse = CourseDecorator.new(Course.friendly.find(params[:course_id]))
+    @lcourse.lessons.friendly.find(params[:id])
   end
 end
